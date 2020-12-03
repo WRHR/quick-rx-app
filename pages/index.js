@@ -10,6 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Heading>
+        <h1>Welcome to Quick RX</h1>
         <About />
       </Heading>
       <main className={styles.main}>

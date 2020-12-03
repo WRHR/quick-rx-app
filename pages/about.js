@@ -1,4 +1,4 @@
-import { Box, Button, useDisclosure, Slide } from "@chakra-ui/react";
+import { Box, Button, useDisclosure, Slide, Heading, Text } from "@chakra-ui/react";
 
 function About() {
   const { isOpen, onToggle } = useDisclosure();
@@ -15,11 +15,11 @@ function About() {
           rounded="md"
           shadow="md"
         >
-          <h3>About Quick-RX</h3>
-          <p>
+          <Heading>About Quick-RX</Heading>
+          <Text fontSize='lg' pt='10px'>
             This application allow quick perscription adcive based on patient
             characteristics and medical history.
-          </p>
+          </Text>
         </Box>
       </Slide>
     </>
