@@ -24,7 +24,7 @@ function About() {
         >
           <Heading size="lg">About Quick-RX</Heading>
           <Text fontSize="lg" pt="10px">
-            This application allow quick perscription adcive based on patient
+            This application allow quick perscription advice based on patient
             characteristics and medical history.
           </Text>
         </Box>

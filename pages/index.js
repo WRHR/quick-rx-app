@@ -1,8 +1,11 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { Link, Heading } from "@chakra-ui/react"
-import About from './about'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import { Link, Heading, Button, Box } from "@chakra-ui/react";
+import About from "./about";
+import { useState } from "react";
+
 export default function Home() {
+  const [activeDiagnostic, setActiveDiagnostic] = useState('')
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +17,10 @@ export default function Home() {
         <About />
       </Heading>
       <main className={styles.main}>
+        <Heading size="md">Clinical practice guidlines for manging:</Heading>
+        <Box pt='20px'>
+          <Button onClick={()=>setActiveDiagnostic('dyslipidemia')}>Dyslipidemia</Button>
+        </Box>
       </main>
 
       <footer className={styles.footer}>
@@ -22,10 +29,10 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  )
+  );
 }
