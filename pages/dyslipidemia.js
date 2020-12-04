@@ -13,6 +13,8 @@ import PageHeader from "../components/PageHeader";
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
+  const [lifeExp, setLifeExp] = useState(null);
+  const [patientCVD, setPatientCVD] =useState(null)
   return (
     <Box>
       <PageHeader diesease="Dyslipidemia" />
@@ -28,13 +30,33 @@ export default function Dyslipidemia() {
             <Radio value="no">No</Radio>
           </HStack>
         </RadioGroup>
-        {validAge === "yes" ? (
+        {validAge === "yes" && (
           <Box>
-            <FormLabel>Does the patient have EF less than 35%, ESKD, or a life expectancy less than 5 years?</FormLabel>
+            <FormLabel>
+              Does the patient have EF less than 35%, ESKD, or a life expectancy
+              less than 5 years?
+            </FormLabel>
+            <RadioGroup onChange={setLifeExp} value={lifeExp}>
+              <HStack>
+                <Radio value="yes">Yes</Radio>
+                <Radio value="no">No</Radio>
+              </HStack>
+            </RadioGroup>
           </Box>
-        ) : (
+        )}
+        {validAge === "no" && (
           <Text>Discuss other treatment options with patient</Text>
         )}
+        {lifeExp === "yes" && <Text>Discuss lack of evidence demonstrating benefit and continue ongoing care</Text>}
+        {lifeExp === "no" && (<Box>
+          <FormLabel>Does the patient have higher-risk CVD?</FormLabel>
+          <RadioGroup onChange={setPatientCVD} value={patientCVD}>
+              <HStack>
+                <Radio value="yes">Yes</Radio>
+                <Radio value="no">No</Radio>
+              </HStack>
+            </RadioGroup>
+        </Box>)}
       </FormControl>
     </Box>
   );
