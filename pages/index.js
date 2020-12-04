@@ -19,8 +19,9 @@ export default function Home() {
       <main className={styles.main}>
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
         <Box pt='20px'>
-          <Button onClick={()=>setActiveDiagnostic('dyslipidemia')}>Dyslipidemia</Button>
+          <Button onClick={(e)=>setActiveDiagnostic('Dyslipidemia')}>Dyslipidemia</Button>
         </Box>
+        
       </main>
 
       <footer className={styles.footer}>
