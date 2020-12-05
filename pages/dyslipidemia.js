@@ -81,6 +81,7 @@ export default function Dyslipidemia() {
         {patientCVD ==='no' && (
           <Box>
             <FormLabel>Does the patient have CVD per Sidebar 1, DM, or LDL-C level less than 4.9 mmol/L (190mg/dL)</FormLabel>
+            
           </Box>
         )}
       </FormControl>
