@@ -16,6 +16,7 @@ export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
   const [lifeExp, setLifeExp] = useState(null);
   const [patientCVD, setPatientCVD] = useState(null);
+  const [patientCVDSideBar, setPatientCVDSideBar] = useState(null);
   return (
     <Box>
       <PageHeader diesease="Dyslipidemia" />
@@ -78,10 +79,18 @@ export default function Dyslipidemia() {
             </Text>
           </Box>
         )}
-        {patientCVD ==='no' && (
+        {patientCVD === "no" && (
           <Box>
-            <FormLabel>Does the patient have CVD per Sidebar 1, DM, or LDL-C level less than 4.9 mmol/L (190mg/dL)</FormLabel>
-            
+            <FormLabel>
+              Does the patient have CVD per Sidebar 1, DM, or LDL-C level less
+              than 4.9 mmol/L (190mg/dL)
+            </FormLabel>
+            <RadioGroup onChange={setPatientCVDSideBar} value={patientCVDSideBar}>
+              <HStack>
+                <Radio value="yes">Yes</Radio>
+                <Radio value="no">No</Radio>
+              </HStack>
+            </RadioGroup>
           </Box>
         )}
       </FormControl>
