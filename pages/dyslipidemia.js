@@ -54,12 +54,7 @@ export default function Dyslipidemia() {
               Does the patient have higher-risk CVD?{" "}
               <Button>Show CVD and Equivalents</Button>
             </FormLabel>
-            <RadioGroup onChange={setPatientCVD} value={patientCVD}>
-              <HStack>
-                <Radio value="yes">Yes</Radio>
-                <Radio value="no">No</Radio>
-              </HStack>
-            </RadioGroup>
+            <DiagnosticYN onChange={setPatientCVD} value={patientCVD} />
           </Box>
         )}
         {patientCVD === "yes" && (
@@ -78,15 +73,10 @@ export default function Dyslipidemia() {
               Does the patient have CVD per Sidebar 1, DM, or LDL-C level less
               than 4.9 mmol/L (190mg/dL)
             </FormLabel>
-            <RadioGroup
+            <DiagnosticYN
               onChange={setPatientCVDSideBar}
               value={patientCVDSideBar}
-            >
-              <HStack>
-                <Radio value="yes">Yes</Radio>
-                <Radio value="no">No</Radio>
-              </HStack>
-            </RadioGroup>
+            />
           </Box>
         )}
         {patientCVDSideBar === "yes" && (
@@ -97,12 +87,7 @@ export default function Dyslipidemia() {
         {patientCVDSideBar === "no" && (
           <Box>
             <FormLabel>Is patient's 10-y CVD risk greater than 12%?</FormLabel>
-            <RadioGroup onChange={setPatientCVDRisk} value={patientCVDRisk}>
-              <HStack>
-                <Radio value="yes">Yes</Radio>
-                <Radio value="no">No</Radio>
-              </HStack>
-            </RadioGroup>
+            <DiagnosticYN onChange={setPatientCVDRisk} value={patientCVDRisk} />
           </Box>
         )}
         {patientCVDRisk === "yes" && (
@@ -116,15 +101,10 @@ export default function Dyslipidemia() {
               Is the patient's 10-y risk 6% to 12% and does the patient prefer
               statin treatment?
             </FormLabel>
-            <RadioGroup
+            <DiagnosticYN
               onChange={setPatientStatinPref}
               value={patientStatinPref}
-            >
-              <HStack>
-                <Radio value="yes">Yes</Radio>
-                <Radio value="no">No</Radio>
-              </HStack>
-            </RadioGroup>
+            />
           </Box>
         )}
       </FormControl>
