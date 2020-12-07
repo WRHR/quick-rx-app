@@ -11,6 +11,7 @@ import {
   RadioGroup,
 } from "@chakra-ui/react";
 import PageHeader from "../components/PageHeader";
+import DiagnosticYN from "../components/DiagnosticYN";
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
@@ -28,24 +29,14 @@ export default function Dyslipidemia() {
       </Heading>
       <FormControl>
         <FormLabel>Is the patient older than 40?</FormLabel>
-        <RadioGroup onChange={setValidAge} value={validAge}>
-          <HStack>
-            <Radio value="yes">Yes</Radio>
-            <Radio value="no">No</Radio>
-          </HStack>
-        </RadioGroup>
+        <DiagnosticYN setState={setValidAge} state={validAge} />
         {validAge === "yes" && (
           <Box>
             <FormLabel>
               Does the patient have EF less than 35%, ESKD, or a life expectancy
               less than 5 years?
             </FormLabel>
-            <RadioGroup onChange={setLifeExp} value={lifeExp}>
-              <HStack>
-                <Radio value="yes">Yes</Radio>
-                <Radio value="no">No</Radio>
-              </HStack>
-            </RadioGroup>
+            <DiagnosticYN onChange={setLifeExp} value={lifeExp} />
           </Box>
         )}
         {validAge === "no" && (
@@ -125,7 +116,10 @@ export default function Dyslipidemia() {
               Is the patient's 10-y risk 6% to 12% and does the patient prefer
               statin treatment?
             </FormLabel>
-            <RadioGroup onChange={setPatientStatinPref} value={patientStatinPref}>
+            <RadioGroup
+              onChange={setPatientStatinPref}
+              value={patientStatinPref}
+            >
               <HStack>
                 <Radio value="yes">Yes</Radio>
                 <Radio value="no">No</Radio>
