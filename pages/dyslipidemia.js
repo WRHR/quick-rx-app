@@ -36,7 +36,7 @@ export default function Dyslipidemia() {
               Does the patient have EF less than 35%, ESKD, or a life expectancy
               less than 5 years?
             </FormLabel>
-            <DiagnosticYN onChange={setLifeExp} value={lifeExp} />
+            <DiagnosticYN setState={setLifeExp} state={lifeExp} />
           </Box>
         )}
         {validAge === "no" && (
@@ -54,7 +54,7 @@ export default function Dyslipidemia() {
               Does the patient have higher-risk CVD?{" "}
               <Button>Show CVD and Equivalents</Button>
             </FormLabel>
-            <DiagnosticYN onChange={setPatientCVD} value={patientCVD} />
+            <DiagnosticYN setState={setPatientCVD} state={patientCVD} />
           </Box>
         )}
         {patientCVD === "yes" && (
@@ -74,8 +74,8 @@ export default function Dyslipidemia() {
               than 4.9 mmol/L (190mg/dL)
             </FormLabel>
             <DiagnosticYN
-              onChange={setPatientCVDSideBar}
-              value={patientCVDSideBar}
+              setState={setPatientCVDSideBar}
+              state={patientCVDSideBar}
             />
           </Box>
         )}
@@ -87,7 +87,7 @@ export default function Dyslipidemia() {
         {patientCVDSideBar === "no" && (
           <Box>
             <FormLabel>Is patient's 10-y CVD risk greater than 12%?</FormLabel>
-            <DiagnosticYN onChange={setPatientCVDRisk} value={patientCVDRisk} />
+            <DiagnosticYN setState={setPatientCVDRisk} state={patientCVDRisk} />
           </Box>
         )}
         {patientCVDRisk === "yes" && (
@@ -102,8 +102,8 @@ export default function Dyslipidemia() {
               statin treatment?
             </FormLabel>
             <DiagnosticYN
-              onChange={setPatientStatinPref}
-              value={patientStatinPref}
+              setState={setPatientStatinPref}
+              state={patientStatinPref}
             />
           </Box>
         )}
