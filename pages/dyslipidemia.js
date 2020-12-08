@@ -18,13 +18,13 @@ export default function Dyslipidemia() {
   const [patientCVDRisk, setPatientCVDRisk] = useState(null);
   const [patientStatinPref, setPatientStatinPref] = useState(null);
   return (
-    <Box>
+    <Box textAlign='center'>
       <PageHeader diesease="Dyslipidemia" />
       <Heading size="md">
         VA/DoD Clinical practice guideline for managing Dyslipidemia to reduce
         CVD risk
       </Heading>
-      <FormControl>
+      <FormControl p="20px">
         <FormLabel>Is the patient older than 40?</FormLabel>
         <DiagnosticYN setState={setValidAge} state={validAge} />
         {validAge === "yes" && (
@@ -48,7 +48,7 @@ export default function Dyslipidemia() {
         {lifeExp === "no" && (
           <Box>
             <FormLabel>
-              Does the patient have higher-risk CVD?{" "}
+              Does the patient have higher-risk CVD?
               <Button>Show CVD and Equivalents</Button>
             </FormLabel>
             <DiagnosticYN setState={setPatientCVD} state={patientCVD} />
