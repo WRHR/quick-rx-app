@@ -18,17 +18,17 @@ export default function Dyslipidemia() {
   const [patientCVDRisk, setPatientCVDRisk] = useState(null);
   const [patientStatinPref, setPatientStatinPref] = useState(null);
   return (
-    <Box textAlign='center'>
+    <Box textAlign="center" p="20px">
       <PageHeader diesease="Dyslipidemia" />
       <Heading size="md">
         VA/DoD Clinical practice guideline for managing Dyslipidemia to reduce
         CVD risk
       </Heading>
-      <FormControl p="20px">
+      <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
         <FormLabel>Is the patient older than 40?</FormLabel>
         <DiagnosticYN setState={setValidAge} state={validAge} />
         {validAge === "yes" && (
-          <Box>
+          <Box pt="10px">
             <FormLabel>
               Does the patient have EF less than 35%, ESKD, or a life expectancy
               less than 5 years?
@@ -46,7 +46,7 @@ export default function Dyslipidemia() {
           </Text>
         )}
         {lifeExp === "no" && (
-          <Box>
+          <Box pt="10px">
             <FormLabel>
               Does the patient have higher-risk CVD?
               <Button>Show CVD and Equivalents</Button>
@@ -55,7 +55,7 @@ export default function Dyslipidemia() {
           </Box>
         )}
         {patientCVD === "yes" && (
-          <Box>
+          <Box pt="10px">
             <Text>Recommend stepped intensification</Text>
             <Text>Maximize statin therapy or add ezetimibe</Text>
             <Text>
@@ -65,7 +65,7 @@ export default function Dyslipidemia() {
           </Box>
         )}
         {patientCVD === "no" && (
-          <Box>
+          <Box pt="10px">
             <FormLabel>
               Does the patient have CVD per Sidebar 1, DM, or LDL-C level less
               than 4.9 mmol/L (190mg/dL)
@@ -77,23 +77,23 @@ export default function Dyslipidemia() {
           </Box>
         )}
         {patientCVDSideBar === "yes" && (
-          <Box>
+          <Box pt="10px">
             <Text>Recommend moderate dose of statin therapy</Text>
           </Box>
         )}
         {patientCVDSideBar === "no" && (
-          <Box>
+          <Box pt="10px">
             <FormLabel>Is patient's 10-y CVD risk greater than 12%?</FormLabel>
             <DiagnosticYN setState={setPatientCVDRisk} state={patientCVDRisk} />
           </Box>
         )}
         {patientCVDRisk === "yes" && (
-          <Box>
+          <Box pt="10px">
             <Text>Recommend moderate dose of statin therapy</Text>
           </Box>
         )}
         {patientCVDRisk === "no" && (
-          <Box>
+          <Box pt="10px">
             <FormLabel>
               Is the patient's 10-y risk 6% to 12% and does the patient prefer
               statin treatment?
