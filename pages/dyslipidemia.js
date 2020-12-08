@@ -6,9 +6,6 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  HStack,
-  Radio,
-  RadioGroup,
 } from "@chakra-ui/react";
 import PageHeader from "../components/PageHeader";
 import DiagnosticYN from "../components/DiagnosticYN";
