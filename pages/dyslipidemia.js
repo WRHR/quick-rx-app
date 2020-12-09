@@ -18,6 +18,7 @@ export default function Dyslipidemia() {
   const [patientCVDSideBar, setPatientCVDSideBar] = useState(null);
   const [patientCVDRisk, setPatientCVDRisk] = useState(null);
   const [patientStatinPref, setPatientStatinPref] = useState(null);
+
   return (
     <Box textAlign="center" p="20px">
       <PageHeader diesease="Dyslipidemia" />
@@ -63,6 +64,7 @@ export default function Dyslipidemia() {
               Consider PCSK9 inhibitor only after maximizing statin therapy and
               adding eetimibe
             </Text>
+            <Text>If MI,ACS, or CABG/PCI in the past 6 weeks, refer for cardiac rehab <Button>?</Button></Text>
           </Box>
         )}
         {patientCVD === "no" && (
