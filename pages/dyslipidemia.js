@@ -11,6 +11,7 @@ import PageHeader from "../components/PageHeader";
 import DiagnosticYN from "../components/DiagnosticYN";
 import SeeSidebar3 from "../components/SeeSidebar3";
 import MediterraneanDiet from '../components/MediterraneanDiet'
+import ExerciseRec from "../components/ExerciseRec";
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
@@ -102,6 +103,7 @@ export default function Dyslipidemia() {
           </Box>
         )}
         {patientStatinPref === "yes" && <SeeSidebar3 />}
+        {patientStatinPref ==='no' && <ExerciseRec />}
       </FormControl>
     </Box>
   );
