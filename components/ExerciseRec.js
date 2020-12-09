@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import FollowUp from './FollowUp'
 
 export default function ExerciseRec() {
   return (
@@ -6,6 +7,7 @@ export default function ExerciseRec() {
       <Text>
         Recommend regular aerobic exercise and smoking cessation(if applicable)
       </Text>
+      <FollowUp />
     </Box>
   );
 }
