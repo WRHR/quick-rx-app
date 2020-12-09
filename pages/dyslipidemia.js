@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import PageHeader from "../components/PageHeader";
 import DiagnosticYN from "../components/DiagnosticYN";
+import SeeSidebar3 from "../components/SeeSidebar3";
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
@@ -76,24 +77,14 @@ export default function Dyslipidemia() {
             />
           </Box>
         )}
-        {patientCVDSideBar === "yes" && (
-          <Box pt="10px">
-            <Text>Recommend moderate dose of statin therapy</Text>
-          </Box>
-        )}
+        {patientCVDSideBar === "yes" && <SeeSidebar3 />}
         {patientCVDSideBar === "no" && (
           <Box pt="10px">
             <FormLabel>Is patient's 10-y CVD risk greater than 12%?</FormLabel>
             <DiagnosticYN setState={setPatientCVDRisk} state={patientCVDRisk} />
           </Box>
         )}
-        {patientCVDRisk === "yes" && (
-          <Box pt="10px">
-            <Text>
-              Recommend moderate dose of statin therapy (see Sidebar 3)
-            </Text>
-          </Box>
-        )}
+        {patientCVDRisk === "yes" && <SeeSidebar3 />}
         {patientCVDRisk === "no" && (
           <Box pt="10px">
             <FormLabel>
@@ -106,7 +97,7 @@ export default function Dyslipidemia() {
             />
           </Box>
         )}
-        {patientStatinPref === "yes" && <Box></Box>}
+        {patientStatinPref === "yes" && <SeeSidebar3 />}
       </FormControl>
     </Box>
   );
