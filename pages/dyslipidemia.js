@@ -10,6 +10,7 @@ import {
 import PageHeader from "../components/PageHeader";
 import DiagnosticYN from "../components/DiagnosticYN";
 import SeeSidebar3 from "../components/SeeSidebar3";
+import MediterraneanDiet from '../components/MediterraneanDiet'
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
@@ -65,6 +66,7 @@ export default function Dyslipidemia() {
               adding eetimibe
             </Text>
             <Text>If MI,ACS, or CABG/PCI in the past 6 weeks, refer for cardiac rehab <Button>?</Button></Text>
+            <MediterraneanDiet />
           </Box>
         )}
         {patientCVD === "no" && (
