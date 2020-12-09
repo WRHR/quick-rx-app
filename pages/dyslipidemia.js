@@ -89,7 +89,9 @@ export default function Dyslipidemia() {
         )}
         {patientCVDRisk === "yes" && (
           <Box pt="10px">
-            <Text>Recommend moderate dose of statin therapy</Text>
+            <Text>
+              Recommend moderate dose of statin therapy (see Sidebar 3)
+            </Text>
           </Box>
         )}
         {patientCVDRisk === "no" && (
@@ -104,6 +106,7 @@ export default function Dyslipidemia() {
             />
           </Box>
         )}
+        {patientStatinPref === "yes" && <Box></Box>}
       </FormControl>
     </Box>
   );
