@@ -24,7 +24,7 @@ export default function Dyslipidemia() {
   const [patientStatinPref, setPatientStatinPref] = useState(null);
 
   return (
-    <Box textAlign="center" p="20px">
+    <Box p="20px">
       <PageHeader diesease="Dyslipidemia" />
       <Heading size="md">
         VA/DoD Clinical practice guideline for managing Dyslipidemia to reduce

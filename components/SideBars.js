@@ -1,10 +1,10 @@
-import { TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
-import Sidebar1 from './Sidebar1'
-import Sidebar2 from './Sidebar2'
-import Sidebar3 from './Sidebar3'
+import { TabList, TabPanel, TabPanels, Tabs, Tab } from "@chakra-ui/react";
+import Sidebar1 from "./Sidebar1";
+import Sidebar2 from "./Sidebar2";
+import Sidebar3 from "./Sidebar3";
 
-export default function SideBars(){
-  return(
+export default function SideBars() {
+  return (
     <Tabs>
       <TabList>
         <Tab>Sidebar 1</Tab>
@@ -23,5 +23,5 @@ export default function SideBars(){
         </TabPanel>
       </TabPanels>
     </Tabs>
-  )
+  );
 }
