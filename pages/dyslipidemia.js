@@ -13,7 +13,7 @@ import DiagnosticYN from "../components/DiagnosticYN";
 import SeeSidebar3 from "../components/SeeSidebar3";
 import MediterraneanDiet from "../components/MediterraneanDiet";
 import ExerciseRec from "../components/ExerciseRec";
-import SideBars from '../components/SideBars'
+import SideBars from "../components/SideBars";
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
@@ -24,14 +24,14 @@ export default function Dyslipidemia() {
   const [patientStatinPref, setPatientStatinPref] = useState(null);
 
   return (
-    <Box p="20px">
+    <Box p="20px" pr='20px'>
       <PageHeader diesease="Dyslipidemia" />
-      <Heading size="md">
+      <Heading size="md" p='10px'>
         VA/DoD Clinical practice guideline for managing Dyslipidemia to reduce
         CVD risk
       </Heading>
       <Flex>
-        <Box>
+        <Box w="50%">
           <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
             <FormLabel>Is the patient older than 40?</FormLabel>
             <DiagnosticYN setState={setValidAge} state={validAge} />
