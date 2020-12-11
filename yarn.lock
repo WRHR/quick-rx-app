@@ -512,6 +512,13 @@
     "@chakra-ui/utils" "1.0.1"
     react-fast-compare "3.2.0"
 
+"@chakra-ui/table@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/table/-/table-1.0.1.tgz#827dd8735e663835bce2c5393bab4a20345b3712"
+  integrity sha512-pv/XiWrCUk3XJAwbSa5/6RaBQryoqbn2NTgCbZ2riuil4m18U0vMBAcxzG2M0+mYXdNdB1MZmm5/yj8UdQ7qtQ==
+  dependencies:
+    "@chakra-ui/utils" "1.0.1"
+
 "@chakra-ui/tabs@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@chakra-ui/tabs/-/tabs-1.0.1.tgz#0a50225786975fdd22d21de40598e40bb77f9619"

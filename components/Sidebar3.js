@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Table,
   Thead,
@@ -6,7 +7,7 @@ import {
   Th,
   Td,
   TableCaption,
-} from "@chakra-ui/react";
+} from "@chakra-ui/table";
 
 export default function Sidebar3() {
   return (
