@@ -5,7 +5,7 @@ import Sidebar3 from "./Sidebar3";
 
 export default function SideBars() {
   return (
-    <Tabs>
+    <Tabs >
       <TabList>
         <Tab>Sidebar 1</Tab>
         <Tab>Sidebar 2</Tab>

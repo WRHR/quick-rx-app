@@ -24,9 +24,9 @@ export default function Dyslipidemia() {
   const [patientStatinPref, setPatientStatinPref] = useState(null);
 
   return (
-    <Box p="20px" pr='20px'>
+    <Box p="20px" pr="20px">
       <PageHeader diesease="Dyslipidemia" />
-      <Heading size="md" p='10px'>
+      <Heading size="md" p="10px">
         VA/DoD Clinical practice guideline for managing Dyslipidemia to reduce
         CVD risk
       </Heading>
@@ -118,7 +118,9 @@ export default function Dyslipidemia() {
             {patientStatinPref === "no" && <ExerciseRec />}
           </FormControl>
         </Box>
-        <SideBars />
+        <Box w='50%'>
+          <SideBars />
+        </Box>
       </Flex>
     </Box>
   );
