@@ -19,7 +19,7 @@ export default function Home() {
       <main className={styles.main}>
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
         <Box pt='20px'>
-          <Link href={activeDiagnostic} onClick={()=>setActiveDiagnostic('Dyslipidemia')}>Dyslipidemia</Link>
+          <Link href={activeDiagnostic} onClick={()=>setActiveDiagnostic('dyslipidemia')}>Dyslipidemia</Link>
         </Box>
         
       </main>
