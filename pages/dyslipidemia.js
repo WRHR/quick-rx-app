@@ -8,6 +8,7 @@ import {
   Heading,
   Flex,
   SlideFade,
+  Slider,
 } from "@chakra-ui/react";
 import PageHeader from "../components/PageHeader";
 import DiagnosticYN from "../components/DiagnosticYN";
@@ -63,52 +64,64 @@ export default function Dyslipidemia() {
               </SlideFade>
             )}
             {lifeExp === "no" && (
-              <Box pt="10px">
-                <FormLabel>
-                  Does the patient have higher-risk CVD?
-                  <Button>Show CVD and Equivalents</Button>
-                </FormLabel>
-                <DiagnosticYN setState={setPatientCVD} state={patientCVD} />
-              </Box>
+              <SlideFade in={true}>
+                <Box pt="10px">
+                  <FormLabel>
+                    Does the patient have higher-risk CVD?
+                    <Button>Show CVD and Equivalents</Button>
+                  </FormLabel>
+                  <DiagnosticYN setState={setPatientCVD} state={patientCVD} />
+                </Box>
+              </SlideFade>
             )}
             {patientCVD === "yes" && (
-              <Box pt="10px">
-                <Text>Recommend stepped intensification</Text>
-                <Text>Maximize statin therapy or add ezetimibe</Text>
-                <Text>
-                  Consider PCSK9 inhibitor only after maximizing statin therapy
-                  and adding eetimibe
-                </Text>
-                <Text>
-                  If MI,ACS, or CABG/PCI in the past 6 weeks, refer for cardiac
-                  rehab <Button>?</Button>
-                </Text>
-                <MediterraneanDiet />
-              </Box>
+              <SlideFade in={true}>
+                <Box pt="10px">
+                  <Text>Recommend stepped intensification</Text>
+                  <Text>Maximize statin therapy or add ezetimibe</Text>
+                  <Text>
+                    Consider PCSK9 inhibitor only after maximizing statin
+                    therapy and adding eetimibe
+                  </Text>
+                  <Text>
+                    If MI,ACS, or CABG/PCI in the past 6 weeks, refer for
+                    cardiac rehab <Button>?</Button>
+                  </Text>
+                  <MediterraneanDiet />
+                </Box>
+              </SlideFade>
             )}
             {patientCVD === "no" && (
-              <Box pt="10px">
-                <FormLabel>
-                  Does the patient have CVD per Sidebar 1, DM, or LDL-C level
-                  less than 4.9 mmol/L (190mg/dL)
-                </FormLabel>
-                <DiagnosticYN
-                  setState={setPatientCVDSideBar}
-                  state={patientCVDSideBar}
-                />
-              </Box>
+              <SlideFade in={true}>
+                <Box pt="10px">
+                  <FormLabel>
+                    Does the patient have CVD per Sidebar 1, DM, or LDL-C level
+                    less than 4.9 mmol/L (190mg/dL)
+                  </FormLabel>
+                  <DiagnosticYN
+                    setState={setPatientCVDSideBar}
+                    state={patientCVDSideBar}
+                  />
+                </Box>
+              </SlideFade>
             )}
-            {patientCVDSideBar === "yes" && <SeeSidebar3 />}
+            {patientCVDSideBar === "yes" && (
+              <SlideFade in={true}>
+                <SeeSidebar3 />
+              </SlideFade>
+            )}
             {patientCVDSideBar === "no" && (
-              <Box pt="10px">
-                <FormLabel>
-                  Is patient's 10-y CVD risk greater than 12%?
-                </FormLabel>
-                <DiagnosticYN
-                  setState={setPatientCVDRisk}
-                  state={patientCVDRisk}
-                />
-              </Box>
+              <SlideFade in={true}>
+                <Box pt="10px">
+                  <FormLabel>
+                    Is patient's 10-y CVD risk greater than 12%?
+                  </FormLabel>
+                  <DiagnosticYN
+                    setState={setPatientCVDRisk}
+                    state={patientCVDRisk}
+                  />
+                </Box>
+              </SlideFade>
             )}
             {patientCVDRisk === "yes" && <SeeSidebar3 />}
             {patientCVDRisk === "no" && (
@@ -123,8 +136,16 @@ export default function Dyslipidemia() {
                 />
               </Box>
             )}
-            {patientStatinPref === "yes" && <SeeSidebar3 />}
-            {patientStatinPref === "no" && <ExerciseRec />}
+            {patientStatinPref === "yes" && (
+              <SlideFade in={true}>
+                <SeeSidebar3 />
+              </SlideFade>
+            )}
+            {patientStatinPref === "no" && (
+              <SlideFade in={true}>
+                <ExerciseRec />
+              </SlideFade>
+            )}
           </FormControl>
         </Box>
         <Box w="50%">
