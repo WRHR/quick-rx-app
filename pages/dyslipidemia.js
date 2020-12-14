@@ -7,6 +7,7 @@ import {
   FormLabel,
   Heading,
   Flex,
+  SlideFade,
 } from "@chakra-ui/react";
 import PageHeader from "../components/PageHeader";
 import DiagnosticYN from "../components/DiagnosticYN";
@@ -33,25 +34,33 @@ export default function Dyslipidemia() {
       <Flex>
         <Box w="50%">
           <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
-            <FormLabel>Is the patient older than 40?</FormLabel>
-            <DiagnosticYN setState={setValidAge} state={validAge} />
+            <SlideFade in={true}>
+              <FormLabel>Is the patient older than 40?</FormLabel>
+              <DiagnosticYN setState={setValidAge} state={validAge} />
+            </SlideFade>
             {validAge === "yes" && (
-              <Box pt="10px">
-                <FormLabel>
-                  Does the patient have EF less than 35%, ESKD, or a life
-                  expectancy less than 5 years?
-                </FormLabel>
-                <DiagnosticYN setState={setLifeExp} state={lifeExp} />
-              </Box>
+              <SlideFade in={true}>
+                <Box pt="10px">
+                  <FormLabel>
+                    Does the patient have EF less than 35%, ESKD, or a life
+                    expectancy less than 5 years?
+                  </FormLabel>
+                  <DiagnosticYN setState={setLifeExp} state={lifeExp} />
+                </Box>
+              </SlideFade>
             )}
             {validAge === "no" && (
-              <Text>Discuss other treatment options with patient</Text>
+              <SlideFade in={true}>
+                <Text>Discuss other treatment options with patient</Text>
+              </SlideFade>
             )}
             {lifeExp === "yes" && (
-              <Text>
-                Discuss lack of evidence demonstrating benefit and continue
-                ongoing care
-              </Text>
+              <SlideFade in={true}>
+                <Text>
+                  Discuss lack of evidence demonstrating benefit and continue
+                  ongoing care
+                </Text>
+              </SlideFade>
             )}
             {lifeExp === "no" && (
               <Box pt="10px">
@@ -118,7 +127,7 @@ export default function Dyslipidemia() {
             {patientStatinPref === "no" && <ExerciseRec />}
           </FormControl>
         </Box>
-        <Box w='50%'>
+        <Box w="50%">
           <SideBars />
         </Box>
       </Flex>
