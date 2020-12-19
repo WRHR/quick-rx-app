@@ -51,6 +51,7 @@ export default function Dyslipidemia() {
             )}
             {validAge === "no" && (
               <SlideFade in={true}>
+                <MediterraneanDiet />
                 <Text>Discuss other treatment options with patient</Text>
               </SlideFade>
             )}
@@ -67,7 +68,7 @@ export default function Dyslipidemia() {
                 <Box pt="10px">
                   <FormLabel>
                     Does the patient have higher-risk CVD?
-                    <Button>Show CVD and Equivalents</Button>
+                    <Button>See Sidebar 1</Button>
                   </FormLabel>
                   <DiagnosticYN setState={setPatientCVD} state={patientCVD} />
                 </Box>
