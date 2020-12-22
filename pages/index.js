@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Link, Heading, Button, Box } from "@chakra-ui/react";
-import About from "./about";
+import About from "../components/about";
 import { useState } from "react";
 
 export default function Home() {
