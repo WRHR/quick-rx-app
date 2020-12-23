@@ -1,4 +1,4 @@
-import { Menu } from "@chakra-ui/react";
+import { Menu, MenuList, MenuItem } from "@chakra-ui/react";
 
 export const MenuTab = () => {
   return (
