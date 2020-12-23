@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { Link, Heading, Button, Box } from "@chakra-ui/react";
 import About from "../components/about";
 import { useState } from "react";
+import SearchBar from '../components/SearchBar'
 
 export default function Home() {
   const [activeDiagnostic, setActiveDiagnostic] = useState('')
@@ -17,6 +18,7 @@ export default function Home() {
         <About />
       </Heading>
       <main className={styles.main}>
+        <SearchBar />
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
         <Box pt='20px'>
           <Link href={activeDiagnostic} onClick={()=>setActiveDiagnostic('dyslipidemia')}>Dyslipidemia</Link>

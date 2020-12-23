@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import { useState } from "react";
 export const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -10,6 +10,7 @@ export const SearchBar = () => {
         onChange={(e) => setSearch(e.value)}
         placeholder="Find a reference..."
       />
+      <Button>Search</Button>
     </Box>
   );
 };
