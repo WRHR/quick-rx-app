@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Link, Heading, Button, Box } from "@chakra-ui/react";
+import { Link, Heading, Button, Box, Flex } from "@chakra-ui/react";
 import About from "../components/about";
 import { useState } from "react";
-import SearchBar from '../components/SearchBar'
+import SearchBar from "../components/SearchBar";
 
 export default function Home() {
-  const [activeDiagnostic, setActiveDiagnostic] = useState('')
+  const [activeDiagnostic, setActiveDiagnostic] = useState("");
   return (
     <div className={styles.container}>
       <Head>
@@ -15,15 +15,21 @@ export default function Home() {
       </Head>
       <Heading>
         <h1>Welcome to Quick RX</h1>
-        <About />
+        <Flex direction='row'>
+          <SearchBar />
+          <About />
+        </Flex>
       </Heading>
       <main className={styles.main}>
-        <SearchBar />
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
-        <Box pt='20px'>
-          <Link href={activeDiagnostic} onClick={()=>setActiveDiagnostic('dyslipidemia')}>Dyslipidemia</Link>
+        <Box pt="20px">
+          <Link
+            href={activeDiagnostic}
+            onClick={() => setActiveDiagnostic("dyslipidemia")}
+          >
+            Dyslipidemia
+          </Link>
         </Box>
-        
       </main>
 
       <footer className={styles.footer}>
