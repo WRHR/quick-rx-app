@@ -36,24 +36,7 @@ export default function Dyslipidemia() {
           <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
             <SlideFade in={true}>
               <FormLabel>Is the patient older than 40?</FormLabel>
-              <DiagnosticYN
-                setState={setValidAge}
-                state={validAge}
-                states={[
-                  lifeExp,
-                  patientCVD,
-                  patientCVDSideBar,
-                  patientCVDRisk,
-                  patientStatinPref,
-                ]}
-                setStates={[
-                  setLifeExp,
-                  setPatientCVD,
-                  setPatientCVDSideBar,
-                  setPatientCVDRisk,
-                  setPatientStatinPref,
-                ]}
-              />
+              <DiagnosticYN setState={setValidAge} state={validAge} />
             </SlideFade>
             {validAge === "yes" && (
               <SlideFade in={true}>
@@ -62,24 +45,7 @@ export default function Dyslipidemia() {
                     Does the patient have EF less than 35%, ESKD, or a life
                     expectancy less than 5 years?
                   </FormLabel>
-                  <DiagnosticYN
-                    setState={setLifeExp}
-                    state={lifeExp}
-                    states={[
-                      lifeExp,
-                      patientCVD,
-                      patientCVDSideBar,
-                      patientCVDRisk,
-                      patientStatinPref,
-                    ]}
-                    setStates={[
-                      setLifeExp,
-                      setPatientCVD,
-                      setPatientCVDSideBar,
-                      setPatientCVDRisk,
-                      setPatientStatinPref,
-                    ]}
-                  />
+                  <DiagnosticYN setState={setLifeExp} state={lifeExp} />
                 </Box>
               </SlideFade>
             )}
@@ -104,20 +70,7 @@ export default function Dyslipidemia() {
                     Does the patient have higher-risk CVD?
                     <Button>See Sidebar 1</Button>
                   </FormLabel>
-                  <DiagnosticYN setState={setPatientCVD} state={patientCVD} states={[
-                  lifeExp,
-                  patientCVD,
-                  patientCVDSideBar,
-                  patientCVDRisk,
-                  patientStatinPref,
-                ]}
-                setStates={[
-                  setLifeExp,
-                  setPatientCVD,
-                  setPatientCVDSideBar,
-                  setPatientCVDRisk,
-                  setPatientStatinPref,
-                ]} />
+                  <DiagnosticYN setState={setPatientCVD} state={patientCVD} />
                 </Box>
               </SlideFade>
             )}
@@ -148,20 +101,6 @@ export default function Dyslipidemia() {
                   <DiagnosticYN
                     setState={setPatientCVDSideBar}
                     state={patientCVDSideBar}
-                    states={[
-                      lifeExp,
-                      patientCVD,
-                      patientCVDSideBar,
-                      patientCVDRisk,
-                      patientStatinPref,
-                    ]}
-                    setStates={[
-                      setLifeExp,
-                      setPatientCVD,
-                      setPatientCVDSideBar,
-                      setPatientCVDRisk,
-                      setPatientStatinPref,
-                    ]}
                   />
                 </Box>
               </SlideFade>
@@ -180,20 +119,6 @@ export default function Dyslipidemia() {
                   <DiagnosticYN
                     setState={setPatientCVDRisk}
                     state={patientCVDRisk}
-                    states={[
-                      lifeExp,
-                      patientCVD,
-                      patientCVDSideBar,
-                      patientCVDRisk,
-                      patientStatinPref,
-                    ]}
-                    setStates={[
-                      setLifeExp,
-                      setPatientCVD,
-                      setPatientCVDSideBar,
-                      setPatientCVDRisk,
-                      setPatientStatinPref,
-                    ]}
                   />
                 </Box>
               </SlideFade>
@@ -208,20 +133,6 @@ export default function Dyslipidemia() {
                 <DiagnosticYN
                   setState={setPatientStatinPref}
                   state={patientStatinPref}
-                  states={[
-                    lifeExp,
-                    patientCVD,
-                    patientCVDSideBar,
-                    patientCVDRisk,
-                    patientStatinPref,
-                  ]}
-                  setStates={[
-                    setLifeExp,
-                    setPatientCVD,
-                    setPatientCVDSideBar,
-                    setPatientCVDRisk,
-                    setPatientStatinPref,
-                  ]}
                 />
               </Box>
             )}

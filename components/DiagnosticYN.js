@@ -1,14 +1,11 @@
 import { FormLabel, RadioGroup, HStack, Radio, Box, } from "@chakra-ui/react";
 import resetYN from './resetYN'
 
-export default function DiagnosticYN({ state, setState, states, setStates }) {
+export default function DiagnosticYN({ state, setState }) {
 
   return (
     <Box>
-      <RadioGroup onChange={()=> {
-        setState(value) 
-        resetYN(states, setStates)
-        }} value={state}>
+      <RadioGroup onChange={setState} value={state}>
         <HStack>
           <Radio value="yes">Yes</Radio>
           <Radio value="no">No</Radio>
