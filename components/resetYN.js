@@ -1,4 +1,4 @@
-function resetYN({ states, setStates }) {
+export default function resetYN({ states, setStates }) {
   setStates.forEach((set, i) => {
     set(states[i])= null;
   });
