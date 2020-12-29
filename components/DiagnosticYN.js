@@ -1,5 +1,5 @@
 import { FormLabel, RadioGroup, HStack, Radio, Box } from "@chakra-ui/react";
-import resetYN from "./resetYN";
+import resetYN from "../utils/resetYN";
 
 function handlChange(e, setState, setters) {
   setState(e);
