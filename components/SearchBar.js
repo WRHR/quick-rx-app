@@ -3,17 +3,17 @@ import { useState } from "react";
 const SearchBar = () => {
   const [search, setSearch] = useState("");
   return (
-    <Flex>
-      <FormControl>
+    <FormControl>
+      <Flex pr='5px' >
         <Input
           name="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Find a reference..."
         />
-        <Button type='submit'>Search</Button>
-      </FormControl>
-    </Flex>
+        <Button type="submit" >Search</Button>
+      </Flex>
+    </FormControl>
   );
 };
 
