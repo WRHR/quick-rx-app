@@ -24,15 +24,6 @@ export default function Dyslipidemia() {
   const [patientCVDRisk, setPatientCVDRisk] = useState(null);
   const [patientStatinPref, setPatientStatinPref] = useState(null);
 
-  const states = [
-    validAge,
-    lifeExp,
-    patientCVD,
-    patientCVDSideBar,
-    patientCVDRisk,
-    patientStatinPref,
-  ];
-
   const setters = [
     setValidAge,
     setLifeExp,
@@ -54,7 +45,11 @@ export default function Dyslipidemia() {
           <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
             <SlideFade in={true}>
               <FormLabel>Is the patient older than 40?</FormLabel>
-              <DiagnosticYN setState={setValidAge} state={validAge} setters={setters.slice(1)} />
+              <DiagnosticYN
+                setState={setValidAge}
+                state={validAge}
+                setters={setters.slice(1)}
+              />
             </SlideFade>
             {validAge === "yes" && (
               <SlideFade in={true}>
@@ -63,7 +58,11 @@ export default function Dyslipidemia() {
                     Does the patient have EF less than 35%, ESKD, or a life
                     expectancy less than 5 years?
                   </FormLabel>
-                  <DiagnosticYN setState={setLifeExp} state={lifeExp} setters={setters.slice(2)} />
+                  <DiagnosticYN
+                    setState={setLifeExp}
+                    state={lifeExp}
+                    setters={setters.slice(2)}
+                  />
                 </Box>
               </SlideFade>
             )}
@@ -88,7 +87,11 @@ export default function Dyslipidemia() {
                     Does the patient have higher-risk CVD?
                     <Text>See Sidebar 1</Text>
                   </FormLabel>
-                  <DiagnosticYN setState={setPatientCVD} state={patientCVD} setters={setters.slice(3)} />
+                  <DiagnosticYN
+                    setState={setPatientCVD}
+                    state={patientCVD}
+                    setters={setters.slice(3)}
+                  />
                 </Box>
               </SlideFade>
             )}
@@ -119,7 +122,7 @@ export default function Dyslipidemia() {
                   <DiagnosticYN
                     setState={setPatientCVDSideBar}
                     state={patientCVDSideBar}
-                    setters={setters.slice(4)} 
+                    setters={setters.slice(4)}
                   />
                 </Box>
               </SlideFade>
@@ -138,7 +141,7 @@ export default function Dyslipidemia() {
                   <DiagnosticYN
                     setState={setPatientCVDRisk}
                     state={patientCVDRisk}
-                    setters={setters.slice(5)} 
+                    setters={setters.slice(5)}
                   />
                 </Box>
               </SlideFade>
@@ -153,7 +156,7 @@ export default function Dyslipidemia() {
                 <DiagnosticYN
                   setState={setPatientStatinPref}
                   state={patientStatinPref}
-                  setters={setters.slice(6)} 
+                  setters={setters.slice(6)}
                 />
               </Box>
             )}
