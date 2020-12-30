@@ -86,7 +86,7 @@ export default function Dyslipidemia() {
                 <Box pt="10px">
                   <FormLabel>
                     Does the patient have higher-risk CVD?
-                    <Button>See Sidebar 1</Button>
+                    <Text>See Sidebar 1</Text>
                   </FormLabel>
                   <DiagnosticYN setState={setPatientCVD} state={patientCVD} setters={setters.slice(3)} />
                 </Box>
