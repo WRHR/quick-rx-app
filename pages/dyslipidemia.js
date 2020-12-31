@@ -2,9 +2,7 @@ import { useState } from "react";
 import {
   Text,
   Box,
-  Button,
   FormControl,
-  FormLabel,
   Heading,
   Flex,
   SlideFade,
@@ -108,7 +106,7 @@ export default function Dyslipidemia() {
                   </Text>
                   <Text>
                     If MI,ACS, or CABG/PCI in the past 6 weeks, refer for
-                    cardiac rehab <Button>?</Button>
+                    cardiac rehab
                   </Text>
                   <MediterraneanDiet />
                 </Box>
