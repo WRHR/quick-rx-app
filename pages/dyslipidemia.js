@@ -32,15 +32,14 @@ export default function Dyslipidemia() {
     setPatientCVDRisk,
     setPatientStatinPref,
   ];
-  const questions =[
-    'Is the patient older than 40?',
-    'Does the patient have EF < 35%, ESKD, or a life expectancy < 5 years?',
-    'Does the patient have higher-risk CVD?',
-    'Does the patient have CVD per Sidebar 1, DM, or LDL-C level < 4.9 mmol/L (190mg/dL)',
+  const questions = [
+    "Is the patient older than 40?",
+    "Does the patient have EF < 35%, ESKD, or a life expectancy < 5 years?",
+    "Does the patient have higher-risk CVD? (see Sidebar 1)",
+    "Does the patient have CVD per Sidebar 1, DM, or LDL-C level < 4.9 mmol/L (190mg/dL)",
     "Is patient's 10-y CVD risk > 12%?",
     "Is the patient's 10-y risk 6% to 12% and does the patient prefer statin treatment?",
-    
-  ]
+  ];
 
   return (
     <Box p="20px" pr="20px">
@@ -53,8 +52,8 @@ export default function Dyslipidemia() {
         <Box w="50%">
           <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
             <SlideFade in={true}>
-              <FormLabel>Is the patient older than 40?</FormLabel>
               <DiagnosticYN
+                question={questions[0]}
                 setState={setValidAge}
                 state={validAge}
                 setters={setters.slice(1)}
@@ -63,11 +62,8 @@ export default function Dyslipidemia() {
             {validAge === "yes" && (
               <SlideFade in={true}>
                 <Box pt="10px">
-                  <FormLabel>
-                    Does the patient have EF less than 35%, ESKD, or a life
-                    expectancy less than 5 years?
-                  </FormLabel>
                   <DiagnosticYN
+                    question={questions[1]}
                     setState={setLifeExp}
                     state={lifeExp}
                     setters={setters.slice(2)}
@@ -92,11 +88,8 @@ export default function Dyslipidemia() {
             {lifeExp === "no" && (
               <SlideFade in={true}>
                 <Box pt="10px">
-                  <FormLabel>
-                    Does the patient have higher-risk CVD?
-                    <Text>See Sidebar 1</Text>
-                  </FormLabel>
                   <DiagnosticYN
+                    question={questions[2]}
                     setState={setPatientCVD}
                     state={patientCVD}
                     setters={setters.slice(3)}
@@ -124,11 +117,8 @@ export default function Dyslipidemia() {
             {patientCVD === "no" && (
               <SlideFade in={true}>
                 <Box pt="10px">
-                  <FormLabel>
-                    Does the patient have CVD per Sidebar 1, DM, or LDL-C level
-                    less than 4.9 mmol/L (190mg/dL)
-                  </FormLabel>
                   <DiagnosticYN
+                    question={questions[3]}
                     setState={setPatientCVDSideBar}
                     state={patientCVDSideBar}
                     setters={setters.slice(4)}
@@ -144,10 +134,8 @@ export default function Dyslipidemia() {
             {patientCVDSideBar === "no" && (
               <SlideFade in={true}>
                 <Box pt="10px">
-                  <FormLabel>
-                    Is patient's 10-y CVD risk greater than 12%?
-                  </FormLabel>
                   <DiagnosticYN
+                    question={questions[4]}
                     setState={setPatientCVDRisk}
                     state={patientCVDRisk}
                     setters={setters.slice(5)}
@@ -158,11 +146,8 @@ export default function Dyslipidemia() {
             {patientCVDRisk === "yes" && <SeeSidebar3 />}
             {patientCVDRisk === "no" && (
               <Box pt="10px">
-                <FormLabel>
-                  Is the patient's 10-y risk 6% to 12% and does the patient
-                  prefer statin treatment?
-                </FormLabel>
                 <DiagnosticYN
+                  question={questions[5]}
                   setState={setPatientStatinPref}
                   state={patientStatinPref}
                   setters={setters.slice(6)}

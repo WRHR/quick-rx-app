@@ -6,9 +6,10 @@ function handlChange(e, setState, setters) {
   resetYN(setters);
 }
 
-export default function DiagnosticYN({ state, setState, setters }) {
+export default function DiagnosticYN({ state, setState, setters, question }) {
   return (
     <Box>
+      <FormLabel>{question}</FormLabel>
       <RadioGroup
         onChange={(e) => handlChange(e, setState, setters)}
         value={state}
