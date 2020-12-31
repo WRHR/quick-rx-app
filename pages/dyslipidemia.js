@@ -32,6 +32,15 @@ export default function Dyslipidemia() {
     setPatientCVDRisk,
     setPatientStatinPref,
   ];
+  const questions =[
+    'Is the patient older than 40?',
+    'Does the patient have EF < 35%, ESKD, or a life expectancy < 5 years?',
+    'Does the patient have higher-risk CVD?',
+    'Does the patient have CVD per Sidebar 1, DM, or LDL-C level < 4.9 mmol/L (190mg/dL)',
+    "Is patient's 10-y CVD risk > 12%?",
+    "Is the patient's 10-y risk 6% to 12% and does the patient prefer statin treatment?",
+    
+  ]
 
   return (
     <Box p="20px" pr="20px">
