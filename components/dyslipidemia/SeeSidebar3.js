@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import Sidebar3 from "./dyslipidemia/Sidebar3";
+import Sidebar3 from "./Sidebar3";
 import MediterraneanDiet from './MediterraneanDiet'
 
 export default function SeeSidebar3() {

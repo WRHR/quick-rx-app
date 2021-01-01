@@ -1,5 +1,5 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
-import ExerciseRec from './ExerciseRec'
+import ExerciseRec from './dyslipidemia/ExerciseRec'
 
 export default function MediterraneanDiet() {
   return (
