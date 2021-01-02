@@ -4,6 +4,7 @@ import { Link, Heading, Button, Box, Flex } from "@chakra-ui/react";
 import About from "../components/about";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
+import NavBar from "../components/NavBar";
 
 export default function Home() {
   const [activeDiagnostic, setActiveDiagnostic] = useState("");
@@ -14,10 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Heading>
-        <h1>Welcome to Quick RX</h1>
+        <NavBar />
         <Flex direction='row'>
           <SearchBar />
-          <About />
         </Flex>
       </Heading>
       <main className={styles.main}>
