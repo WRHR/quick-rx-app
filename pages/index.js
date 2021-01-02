@@ -16,9 +16,9 @@ export default function Home() {
       </Head>
       <Heading>
         <NavBar />
-        <Flex direction='row'>
+        
           <SearchBar />
-        </Flex>
+      
       </Heading>
       <main className={styles.main}>
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
