@@ -71,8 +71,7 @@ export default function Dyslipidemia() {
             )}
             {validAge === "no" && (
               <SlideFade in={true}>
-                <MediterraneanDiet />
-                <Text>Discuss other treatment options with patient</Text>
+                <RevisedFollowUp />
               </SlideFade>
             )}
             {lifeExp === "yes" && (
@@ -108,7 +107,9 @@ export default function Dyslipidemia() {
                     If MI,ACS, or CABG/PCI in the past 6 weeks, refer for
                     cardiac rehab
                   </Text>
-                  <MediterraneanDiet />
+                  <Text>Consider adding Icoapent ethial 4mg daily</Text>
+                  <Text>Consider adding Benpedoic acid 180mg daily</Text>
+                  <RevisedFollowUp />
                 </Box>
               </SlideFade>
             )}
@@ -159,7 +160,7 @@ export default function Dyslipidemia() {
             )}
             {patientStatinPref === "no" && (
               <SlideFade in={true}>
-                <ExerciseRec />
+                <RevisedFollowUp />
               </SlideFade>
             )}
           </FormControl>
