@@ -11,7 +11,8 @@ import PageHeader from "../components/PageHeader";
 import DiagnosticYN from "../components/DiagnosticYN";
 import SeeSidebar3 from "../components/dyslipidemia/SeeSidebar3";
 import SideBars from "../components/dyslipidemia/SideBars";
-import RevisedFollowUp from '../components/dyslipidemia/RevisedFollowUp'
+import RevisedFollowUp from "../components/dyslipidemia/RevisedFollowUp";
+import NavBar from "../components/NavBar";
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
@@ -39,134 +40,137 @@ export default function Dyslipidemia() {
   ];
 
   return (
-    <Box p="20px" pr="20px">
-      <PageHeader diesease="Dyslipidemia" />
-      <Heading size="md" p="10px">
-        Treatment of Elevated LDL-C
-      </Heading>
-      <Flex>
-        <Box w="50%">
-          <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
-            <SlideFade in={true}>
-              <DiagnosticYN
-                question={questions[0]}
-                setState={setValidAge}
-                state={validAge}
-                setters={setters.slice(1)}
-              />
-            </SlideFade>
-            {validAge === "yes" && (
+    <Box>
+      <NavBar />
+      <Box p="20px" pr="20px">
+        <PageHeader diesease="Dyslipidemia" />
+        <Heading size="md" p="10px">
+          Treatment of Elevated LDL-C
+        </Heading>
+        <Flex>
+          <Box w="50%">
+            <FormControl pt="10px" m="0 20px" display="flex" flexDir="column">
               <SlideFade in={true}>
-                <Box pt="10px">
-                  <DiagnosticYN
-                    question={questions[1]}
-                    setState={setLifeExp}
-                    state={lifeExp}
-                    setters={setters.slice(2)}
-                  />
-                </Box>
-              </SlideFade>
-            )}
-            {validAge === "no" && (
-              <SlideFade in={true}>
-                <RevisedFollowUp />
-              </SlideFade>
-            )}
-            {lifeExp === "yes" && (
-              <SlideFade in={true}>
-                <Text>
-                  Discuss lack of evidence demonstrating benefit and continue
-                  ongoing care
-                </Text>
-              </SlideFade>
-            )}
-            {lifeExp === "no" && (
-              <SlideFade in={true}>
-                <Box pt="10px">
-                  <DiagnosticYN
-                    question={questions[2]}
-                    setState={setPatientCVD}
-                    state={patientCVD}
-                    setters={setters.slice(3)}
-                  />
-                </Box>
-              </SlideFade>
-            )}
-            {patientCVD === "yes" && (
-              <SlideFade in={true}>
-                <Box pt="10px">
-                  <Text>Recommend stepped intensification</Text>
-                  <Text>Maximize statin therapy or add ezetimibe</Text>
-                  <Text>
-                    Consider PCSK9 inhibitor only after maximizing statin
-                    therapy and adding eetimibe
-                  </Text>
-                  <Text>
-                    If MI,ACS, or CABG/PCI in the past 6 weeks, refer for
-                    cardiac rehab
-                  </Text>
-                  <Text>Consider adding Icoapent ethial 4mg daily</Text>
-                  <Text>Consider adding Benpedoic acid 180mg daily</Text>
-                  <RevisedFollowUp />
-                </Box>
-              </SlideFade>
-            )}
-            {patientCVD === "no" && (
-              <SlideFade in={true}>
-                <Box pt="10px">
-                  <DiagnosticYN
-                    question={questions[3]}
-                    setState={setPatientCVDSideBar}
-                    state={patientCVDSideBar}
-                    setters={setters.slice(4)}
-                  />
-                </Box>
-              </SlideFade>
-            )}
-            {patientCVDSideBar === "yes" && (
-              <SlideFade in={true}>
-                <SeeSidebar3 />
-              </SlideFade>
-            )}
-            {patientCVDSideBar === "no" && (
-              <SlideFade in={true}>
-                <Box pt="10px">
-                  <DiagnosticYN
-                    question={questions[4]}
-                    setState={setPatientCVDRisk}
-                    state={patientCVDRisk}
-                    setters={setters.slice(5)}
-                  />
-                </Box>
-              </SlideFade>
-            )}
-            {patientCVDRisk === "yes" && <SeeSidebar3 />}
-            {patientCVDRisk === "no" && (
-              <Box pt="10px">
                 <DiagnosticYN
-                  question={questions[5]}
-                  setState={setPatientStatinPref}
-                  state={patientStatinPref}
-                  setters={setters.slice(6)}
+                  question={questions[0]}
+                  setState={setValidAge}
+                  state={validAge}
+                  setters={setters.slice(1)}
                 />
-              </Box>
-            )}
-            {patientStatinPref === "yes" && (
-              <SlideFade in={true}>
-                <SeeSidebar3 />
               </SlideFade>
-            )}
-            {patientStatinPref === "no" && (
-              <SlideFade in={true}>
-                <RevisedFollowUp />
-              </SlideFade>
-            )}
-          </FormControl>
-        </Box>
-        <Box w="50%">
-          <SideBars />
-        </Box>
-      </Flex>
+              {validAge === "yes" && (
+                <SlideFade in={true}>
+                  <Box pt="10px">
+                    <DiagnosticYN
+                      question={questions[1]}
+                      setState={setLifeExp}
+                      state={lifeExp}
+                      setters={setters.slice(2)}
+                    />
+                  </Box>
+                </SlideFade>
+              )}
+              {validAge === "no" && (
+                <SlideFade in={true}>
+                  <RevisedFollowUp />
+                </SlideFade>
+              )}
+              {lifeExp === "yes" && (
+                <SlideFade in={true}>
+                  <Text>
+                    Discuss lack of evidence demonstrating benefit and continue
+                    ongoing care
+                  </Text>
+                </SlideFade>
+              )}
+              {lifeExp === "no" && (
+                <SlideFade in={true}>
+                  <Box pt="10px">
+                    <DiagnosticYN
+                      question={questions[2]}
+                      setState={setPatientCVD}
+                      state={patientCVD}
+                      setters={setters.slice(3)}
+                    />
+                  </Box>
+                </SlideFade>
+              )}
+              {patientCVD === "yes" && (
+                <SlideFade in={true}>
+                  <Box pt="10px">
+                    <Text>Recommend stepped intensification</Text>
+                    <Text>Maximize statin therapy or add ezetimibe</Text>
+                    <Text>
+                      Consider PCSK9 inhibitor only after maximizing statin
+                      therapy and adding eetimibe
+                    </Text>
+                    <Text>
+                      If MI,ACS, or CABG/PCI in the past 6 weeks, refer for
+                      cardiac rehab
+                    </Text>
+                    <Text>Consider adding Icoapent ethial 4mg daily</Text>
+                    <Text>Consider adding Benpedoic acid 180mg daily</Text>
+                    <RevisedFollowUp />
+                  </Box>
+                </SlideFade>
+              )}
+              {patientCVD === "no" && (
+                <SlideFade in={true}>
+                  <Box pt="10px">
+                    <DiagnosticYN
+                      question={questions[3]}
+                      setState={setPatientCVDSideBar}
+                      state={patientCVDSideBar}
+                      setters={setters.slice(4)}
+                    />
+                  </Box>
+                </SlideFade>
+              )}
+              {patientCVDSideBar === "yes" && (
+                <SlideFade in={true}>
+                  <SeeSidebar3 />
+                </SlideFade>
+              )}
+              {patientCVDSideBar === "no" && (
+                <SlideFade in={true}>
+                  <Box pt="10px">
+                    <DiagnosticYN
+                      question={questions[4]}
+                      setState={setPatientCVDRisk}
+                      state={patientCVDRisk}
+                      setters={setters.slice(5)}
+                    />
+                  </Box>
+                </SlideFade>
+              )}
+              {patientCVDRisk === "yes" && <SeeSidebar3 />}
+              {patientCVDRisk === "no" && (
+                <Box pt="10px">
+                  <DiagnosticYN
+                    question={questions[5]}
+                    setState={setPatientStatinPref}
+                    state={patientStatinPref}
+                    setters={setters.slice(6)}
+                  />
+                </Box>
+              )}
+              {patientStatinPref === "yes" && (
+                <SlideFade in={true}>
+                  <SeeSidebar3 />
+                </SlideFade>
+              )}
+              {patientStatinPref === "no" && (
+                <SlideFade in={true}>
+                  <RevisedFollowUp />
+                </SlideFade>
+              )}
+            </FormControl>
+          </Box>
+          <Box w="50%">
+            <SideBars />
+          </Box>
+        </Flex>
+      </Box>
     </Box>
   );
 }
