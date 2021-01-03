@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Link, Heading, Button, Box, Flex } from "@chakra-ui/react";
-import About from "../components/about";
+import { Link, Heading, Box } from "@chakra-ui/react";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
