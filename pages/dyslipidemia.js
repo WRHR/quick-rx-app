@@ -13,6 +13,7 @@ import SeeSidebar3 from "../components/dyslipidemia/SeeSidebar3";
 import MediterraneanDiet from "../components/MediterraneanDiet";
 import ExerciseRec from "../components/dyslipidemia/ExerciseRec";
 import SideBars from "../components/dyslipidemia/SideBars";
+import RevisedFollowUp from '../components/dyslipidemia/RevisedFollowUp'
 
 export default function Dyslipidemia() {
   const [validAge, setValidAge] = useState(null);
