@@ -14,12 +14,10 @@ export default function Home() {
         <title>Quick RX</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Heading>
+      <Box>
         <NavBar />
-        
-          <SearchBar />
-      
-      </Heading>
+        <SearchBar />
+      </Box>
       <main className={styles.main}>
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
         <Box pt="20px">

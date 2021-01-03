@@ -43,8 +43,7 @@ export default function Dyslipidemia() {
     <Box p="20px" pr="20px">
       <PageHeader diesease="Dyslipidemia" />
       <Heading size="md" p="10px">
-        VA/DoD Clinical practice guideline for managing Dyslipidemia to reduce
-        CVD risk
+        Treatment of Elevated LDL-C
       </Heading>
       <Flex>
         <Box w="50%">
