@@ -35,8 +35,8 @@ export default function Dyslipidemia() {
     "Does the patient have EF < 35%, ESKD, or a life expectancy < 5 years?",
     "Does the patient have higher-risk CVD? (see Sidebar 1)",
     "Does the patient have CVD per Sidebar 1, DM, or LDL-C level < 4.9 mmol/L (190mg/dL)",
-    "Is patient's 10-y CVD risk > 12%?",
-    "Is the patient's 10-y risk 6% to 12% and does the patient prefer statin treatment?",
+    "Is patient's 10-y CVD risk > 10%?",
+    "Is the patient's 10-y risk 7.5% to 10% and does the patient prefer statin treatment?",
   ];
 
   return (
