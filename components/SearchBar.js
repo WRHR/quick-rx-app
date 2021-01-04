@@ -4,7 +4,7 @@ const SearchBar = () => {
   const [search, setSearch] = useState("");
   return (
     <FormControl>
-      <Flex pr='5px' >
+      <Flex pr='5px' w='50%' m='auto'>
         <Input
           name="search"
           value={search}

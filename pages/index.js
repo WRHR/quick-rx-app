@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Link, Heading, Box } from "@chakra-ui/react";
+import { Link, Heading, Box, Grid, GridItem } from "@chakra-ui/react";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
@@ -19,14 +19,32 @@ export default function Home() {
       </Box>
       <main className={styles.main}>
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
-        <Box pt="20px">
-          <Link
-            href={activeDiagnostic}
-            onClick={() => setActiveDiagnostic("dyslipidemia")}
-          >
-            Dyslipidemia
-          </Link>
-        </Box>
+        <Grid templateColumns="repeat(3, 1fr)" gap={10}>
+          <Box pt="20px">
+            <Link
+              href={activeDiagnostic}
+              onClick={() => setActiveDiagnostic("dyslipidemia")}
+            >
+              Dyslipidemia
+            </Link>
+          </Box>
+          <Box pt="20px">
+            <Link
+              href={activeDiagnostic}
+              onClick={() => setActiveDiagnostic("dyslipidemia")}
+            >
+              Test1
+            </Link>
+          </Box>
+          <Box pt="20px">
+            <Link
+              href={activeDiagnostic}
+              onClick={() => setActiveDiagnostic("dyslipidemia")}
+            >
+              Test2
+            </Link>
+          </Box>
+        </Grid>
       </main>
 
       <footer className={styles.footer}>
