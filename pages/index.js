@@ -19,8 +19,8 @@ export default function Home() {
       </Box>
       <main className={styles.main}>
         <Heading size="md">Clinical practice guidlines for manging:</Heading>
-        <Grid templateColumns="repeat(3, 1fr)" gap={10}>
-          <Box pt="20px">
+        <Grid templateColumns="repeat(3, 1fr)" gap={10} pt='20px'>
+          <Box >
             <Link
               href={activeDiagnostic}
               onClick={() => setActiveDiagnostic("dyslipidemia")}
@@ -28,7 +28,7 @@ export default function Home() {
               Dyslipidemia
             </Link>
           </Box>
-          <Box pt="20px">
+          <Box>
             <Link
               href={activeDiagnostic}
               onClick={() => setActiveDiagnostic("dyslipidemia")}
@@ -36,12 +36,20 @@ export default function Home() {
               Test1
             </Link>
           </Box>
-          <Box pt="20px">
+          <Box>
             <Link
               href={activeDiagnostic}
               onClick={() => setActiveDiagnostic("dyslipidemia")}
             >
               Test2
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              href={activeDiagnostic}
+              onClick={() => setActiveDiagnostic("dyslipidemia")}
+            >
+              Test3
             </Link>
           </Box>
         </Grid>
