@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Link, Heading, Box, Grid, GridItem } from "@chakra-ui/react";
+import { Link, Heading, Box, Grid } from "@chakra-ui/react";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
