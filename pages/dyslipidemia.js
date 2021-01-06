@@ -21,7 +21,6 @@ export default function Dyslipidemia() {
   const [patientCVDSideBar, setPatientCVDSideBar] = useState(null);
   const [patientCVDRisk, setPatientCVDRisk] = useState(null);
   const [patientStatinPref, setPatientStatinPref] = useState(null);
-  const [followUp, setFollowUp] = useState(false);
 
   const setters = [
     setValidAge,
@@ -30,7 +29,6 @@ export default function Dyslipidemia() {
     setPatientCVDSideBar,
     setPatientCVDRisk,
     setPatientStatinPref,
-    setFollowUp,
   ];
   const questions = [
     "Is the patient older than 40?",
@@ -169,7 +167,6 @@ export default function Dyslipidemia() {
             </FormControl>
           </Box>
           <Box w="50%">
-            {followUp ? <RevisedFollowUp /> : null}
             <SideBars />
           </Box>
         </Flex>
